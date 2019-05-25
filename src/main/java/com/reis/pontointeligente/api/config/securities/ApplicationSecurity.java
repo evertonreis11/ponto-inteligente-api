@@ -1,0 +1,21 @@
+package com.reis.pontointeligente.api.config.securities;
+
+import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.web.builders.WebSecurity;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+
+/**
+ * Classe criada para substituir a configuracao security.basic.enabled=false
+ * 
+ * @author Administrador
+ *
+ */
+@Configuration
+public class ApplicationSecurity extends WebSecurityConfigurerAdapter{
+	
+	@Override
+	public void configure(WebSecurity web) throws Exception {
+		web.ignoring().antMatchers("/**");
+	}
+
+}
